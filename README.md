@@ -41,7 +41,7 @@ We significantly extended Tor and the PrivCount and PSC measurement tools to con
 Data
 ----
 
-In addition to the auxiliary material linked above (the [Appendix]() and [TRSB feedback]()), we also make the following raw PrivCount and PSC measurement results available:
+In addition to the auxiliary material linked above (the [Appendix](https://www.robgjansen.com/publications/torusage-imc2018-appendix.pdf) and [TRSB feedback](data/trsb-feedback.txt)), we also make the following raw PrivCount and PSC measurement results available:
 
 ### AS Client Connection Count
 
