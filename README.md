@@ -4,10 +4,10 @@ Overview
 This is the landing page for the following research publication:
 
 **Understanding Tor Usage with Privacy-Preserving Measurement**  
-_Proceedings of the 18th ACM Conference on Computer and Communication Security (CCS 2018)_  
+_Proceedings of the 18th ACM Internet Measurement Conference (IMC 2018)_  
 by Akshaya Mani, T Wilson-Brown, [Rob Jansen](https://www.robgjansen.com), [Aaron Johnson](https://ohmygodel.com/), and [Micah Sherr](https://security.cs.georgetown.edu/~msherr/)  
 \[[Full paper available here](https://www.robgjansen.com/publications/torusage-imc2018.pdf)\]  
-\[[Appendix describing privacy action bounds available here](https://www.robgjansen.com/publications/torusage-imc2018-appendix.pdf)\]
+\[[Appendix describing privacy action bounds available here](https://www.robgjansen.com/publications/torusage-imc2018-appendix.pdf)\]  
 \[[Tor Research Safety Board (TRSB) feedback available here](data/trsb-feedback.txt)\]
 
 If you reference this paper, or use any of its results or the data provided on this page, please cite the paper. Here is a bibtex entry for latex users:
@@ -49,10 +49,10 @@ We measured the client connection count for each AS using [PrivCount](https://gi
 
 Utilty: average the connection counts for the 1,653 ASes across all eight days. The new standard deviation can be computed as:
 
-<a href="https://torusage.github.io/data/as-client-formula.png"><img title="shadow_packet_flow" src="https://torusage.github.io/data/as-client-formula.png" /></a>
+<a href="https://torusage-imc2018.github.io/data/as-client-formula.png"><img title="shadow_packet_flow" src="https://torusage-imc2018.github.io/data/as-client-formula.png" /></a>
 
 | Measurement Description | Results file |
 |-------------|--------------|
-| ASNs in the CAIDA IPv4 and IPv6 datasets | [asn.txt](data/asn.txt) |
+| ASNs in the CAIDA IPv4 and IPv6 datasets | [as-client-asn.txt](data/as-client-asn.txt) |
 | Results from PSC phase 1 measurement | [as-client-2018-06-22.csv](data/as-client-2018-06-22.csv) |
 | Results from PSC phase 2 measurement | [as-client-2018-06-27.csv](data/as-client-2018-06-27.csv) |
