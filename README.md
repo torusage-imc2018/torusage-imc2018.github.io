@@ -25,7 +25,7 @@ note = {See also \url{https://torusage-imc2018.github.io}},
 Project Description
 -------------------
 
-This project (in collaboration with researchers at Georgetown University, the University of New South Wales and the U.S. Naval Research Laboratory) conducts a detailed privacy-preserving measurement study of Tor, to better understand how the network is being (mis)used.
+This project (a collaboration between researchers at Georgetown University, the University of New South Wales and the U.S. Naval Research Laboratory) conducts a detailed privacy-preserving measurement study of Tor, to better understand how the network is being (mis)used.
 
 The Tor network is difficult to measure because, if not done carefully, measurements could risk the privacy (and potentially the safety) of the network's users. Recent work has proposed the use of differential privacy and secure aggregation techniques to safely measure Tor. We significantly enhance two such tools - PrivCount and Private Set-Union Cardinality (PSC)-in order to support the safe exploration of three major aspects of Tor usage: how many users connect to Tor and from where do they connect, with which destinations do users most frequently communicate, and how many onion services exist and how are they used.
 
