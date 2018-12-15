@@ -1,37 +1,58 @@
-## Welcome to GitHub Pages
+Overview
+--------
 
-You can use the [editor on GitHub](https://github.com/torusage-imc2018/torusage-imc2018.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+This is the landing page for the following research publication:
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+**Understanding Tor Usage with Privacy-Preserving Measurement**  
+_Proceedings of the 18th ACM Conference on Computer and Communication Security (CCS 2018)_  
+by Akshaya Mani, T Wilson-Brown, [Rob Jansen](https://www.robgjansen.com), [Aaron Johnson](https://ohmygodel.com/), and [Micah Sherr](https://security.cs.georgetown.edu/~msherr/)  
+\[[Full paper available here](https://www.robgjansen.com/publications/torusage-imc2018.pdf)\]  
+\[[Appendix describing privacy action bounds available here](https://www.robgjansen.com/publications/torusage-imc2018-appendix.pdf)\]
+\[[Tor Research Safety Board (TRSB) feedback available here](data/trsb-feedback.txt)\]
 
-### Markdown
+If you reference this paper, or use any of its results or the data provided on this page, please cite the paper. Here is a bibtex entry for latex users:
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```
+@inproceedings{torusage-imc2018,
+author = {Akshaya Mani and T Wilson-Brown and Rob Jansen and Aaron Johnson and Micah Sherr},
+title = {Understanding {Tor} Usage with Privacy-Preserving Measurement},
+booktitle = {18th ACM Internet Measurement Conference (IMC)},
+year = {2018},
+note = {See also \url{https://torusage-imc2018.github.io}},
+}
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+Project Description
+-------------------
 
-### Jekyll Themes
+This project (in collaboration with researchers at Georgetown University, the University of New South Wales and the U.S. Naval Research Laboratory) conducts a detailed privacy-preserving measurement study of Tor, to better understand how the network is being (mis)used.
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/torusage-imc2018/torusage-imc2018.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+The Tor network is difficult to measure because, if not done carefully, measurements could risk the privacy (and potentially the safety) of the network's users. Recent work has proposed the use of differential privacy and secure aggregation techniques to safely measure Tor. We significantly enhance two such tools - PrivCount and Private Set-Union Cardinality (PSC)-in order to support the safe exploration of three major aspects of Tor usage: how many users connect to Tor and from where do they connect, with which destinations do users most frequently communicate, and how many onion services exist and how are they used.
 
-### Support or Contact
+Code
+----
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+We significantly extended Tor and the PrivCount and PSC measurement tools to conduct our measurements. Our code has been merged to the respective open source repositories is available as follows:
+
+  * Tor: [https://github.com/privcount/tor](https://github.com/privcount/tor)
+  * PrivCount: [https://github.com/privcount/privcount](https://github.com/privcount/privcount)
+  * PSC: [https://github.com/AkshayaMani/PSC](https://github.com/AkshayaMani/PSC)
+
+Data
+----
+
+In addition to the auxiliary material linked above (the [Appendix]() and [TRSB feedback]()), we also make the following raw PrivCount and PSC measurement results available:
+
+### AS Client Connection Count
+
+We measured the client connection count for each AS using [PrivCount](https://github.com/privcount/privcount). We used the IPv4 and IPv6 datasets (dated 26th November 2017) from [CAIDA](http://data.caida.org/datasets/routing/routeviews-prefix2as/) to map client IP addresses to its autonomous system (AS). We ran the measurement in two phases, each consisting of four consecutive one-day measurements, and sum the measurements over all days. In the first phase, beginning on 2018-06-22, we included all ASes (59,597 in total), and in the second phase, beginning on 2018-06-27, we included only those 1,653 ASes that did not have zero in their confidence interval in at least one of the days in the first phase. Thus the first phase measurement acted as a filter to reduce the ASes under consideration to those with likely positive true counts.
+
+Utilty: average the connection counts for the 1,653 ASes across all eight days. The new standard deviation can be computed as:
+
+<a href="https://torusage.github.io/data/as-client-formula.png"><img title="shadow_packet_flow" src="https://torusage.github.io/data/as-client-formula.png" /></a>
+
+| Measurement Description | Results file |
+|-------------|--------------|
+| ASNs in the CAIDA IPv4 and IPv6 datasets | [asn.txt](data/asn.txt) |
+| Results from PSC phase 1 measurement | [as-client-2018-06-22.csv](data/as-client-2018-06-22.csv) |
+| Results from PSC phase 2 measurement | [as-client-2018-06-27.csv](data/as-client-2018-06-27.csv) |

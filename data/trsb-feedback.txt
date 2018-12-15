@@ -1,0 +1,53 @@
+===========================================================================
+                   Tor Research Safety Board Review #2A
+---------------------------------------------------------------------------
+                      Paper #2: Tor Measurement Study
+---------------------------------------------------------------------------
+
+                      Overall merit: 4. Accept
+                 Reviewer expertise: 3. Knowledgeable
+
+                         ===== Paper summary =====
+
+The proposal's aims are to learn about trends in the Tor network. Specifically, client, exit, and onion service measurements will be made on the live Tor network to learn about real-world usage of the Tor network from these vantage points. 
+These are potentially risky measurements since they could lead to client anonymity losses. The main mitigation techniques are 1)aggregated results, 2)differential privacy to reduce the information leakage of the results of the measurements and 3)privacy preserving multiparty computations to prevent information leakage of sensitive raw counters. 
+This looks to be the largest such study since it touches on more types of measurements ranging from websites, to traffic protocols, and network infrastructure to name a few.
+
+                      ===== Comments for author =====
+
+*Strengths*
+I believe the plan to mitigate the risks is plausible. The proposal intends on applying the state-of-the-art in privacy-preserving statistics. The author's have prior experience conducting this type of measurement study and are intimately familiar with the inner workings of the tools they intend on using.
+
+They have answered my questions which I communicated to them via email. That exchange is copied here for as documentation (edited for brevity and formatting; Q are me, and R is Aaron Johnson).
+<being email>
+Q1. In terms of difficulty, you equate coercion of the 3 operating entities with the compromise of their relays. Logically the result is the same, but I think the effort might be different. I think it would be far easier to compromise tens of relays, through technical means, than to coerce 3 entities. In other words I think that effort of coercion =/= effort of compromise. Of course one could argue the other way if the entities are particularly easy to coerce. Just something to think about.
+
+R1. I agree that compromising servers is different from (and may be easier than) compromising humans. However, there may be some relation, as a shared human operator potentially opens up the opportunities for a technical compromise of a single machine to spread to all machine controlled by the operator (e.g. shared passwords, shared configuration mistakes).
+
+Q2. In your exit measurements you say that you won't collect stats about individual websites but instead group them by categories. Have I understood correctly?
+
+R2. Yes, we plan to collect statistics about topical categories.
+
+Q3. In what manner do you identify new clients, i.e. their uniqueness, and over what time frame? Also how do you store this information? Is it a lookup table that 'hides' the identifier, like a bloom filter, so that inserted client IDs aren't necessarily stored in their raw form.
+
+R3. We identify clients by their IP address over the period of measurements (i.e. days to weeks). We store this information obliviously using a hash table with entries blinded by random values shared with separate aggregators. The aggregation happens using our Private Set-Union Cardinality (PSC) system.
+
+Q4. Where in the Tor network are you measuring the onions from?
+
+R4. We will observe them at our HSDirs.
+
+Q5. Are you discovering onion addresses? I ask since you say that you will measure unique onion addresses, which sounds like you will find new onion addresses.
+
+R5. We would "discover" onion addresses at the HSDirs, however we are not recording ore reporting the actual address beyond what Tor normally does. We are simply using them to increment a count (or in the case of unique counting, turn an entry in a hash table from zero to one in an oblivious way).
+
+Q6. This is a question I have meant to ask you before: the DP guarantees you have allowed for expects a certain amount of activity otherwise the privacy degrades. How do you estimate how much activity you would expect to see and thus protect for. I assume you do your best to protect some maximum observed activity from your previous work.
+
+R6. The privacy argument is independent of how much activity we expect to see. We configure the system to protect X amount of activity with a period of time Y. That amount of protection is based on arguments for what Tor can reasonably be expected to protect (e.g. connecting to a guard a few times a day vs. connecting to all guards hundreds of times in a day).
+<end email>
+
+*Concerns*
+My only remaining concern is about running HSDirs, which in the past have a connotation of being involved with attacks. To the unaware, or uninitiated, these HSDirs may represent a threat. Will you set up a website, or similar, to let people know that these experiments are happening? It may not be a problem for this study, but I think someday soon we will need to know how we green light experiments and how that plays with (sometimes automated) abuse control measures on the network.
+
+*Recommendation*
+I think this proposal provides a plausible strategy for safely measuring trends on the Tor network.
+
