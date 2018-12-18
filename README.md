@@ -41,7 +41,7 @@ We significantly extended Tor and the PrivCount and PSC measurement tools to con
 Data
 ----
 
-In addition to the auxiliary material linked above (the [Appendix](https://www.robgjansen.com/publications/torusage-imc2018-appendix.pdf) and [TRSB feedback](data/trsb-feedback.txt)), we also make the following raw PrivCount and PSC measurement results available:
+In addition to the auxiliary material linked above (the [Appendix](https://www.robgjansen.com/publications/torusage-imc2018-appendix.pdf) and [TRSB feedback](data/trsb-feedback.txt)), we also make the following raw PrivCount measurement results available:
 
 ### AS Client Connection Count
 
@@ -54,5 +54,5 @@ Utilty: average the connection counts for the 1,653 ASes across all eight days. 
 | Measurement Description | Results file |
 |-------------|--------------|
 | ASNs in the CAIDA IPv4 and IPv6 datasets | [as-client-asn.txt](data/as-client-asn.txt) |
-| Results from PSC phase 1 measurement | [as-client-2018-06-22.csv](data/as-client-2018-06-22.csv) |
-| Results from PSC phase 2 measurement | [as-client-2018-06-27.csv](data/as-client-2018-06-27.csv) |
+| Results from Phase 1 measurement | [as-client-2018-06-22.csv](data/as-client-2018-06-22.csv) |
+| Results from Phase 2 measurement | [as-client-2018-06-27.csv](data/as-client-2018-06-27.csv) |
