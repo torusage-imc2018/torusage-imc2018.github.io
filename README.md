@@ -49,9 +49,9 @@ These results were measured from relays in a position to observe Tor's egress tr
 
 ### Exit Stream Measurements
 
-**COMBINED MEAN EXIT WEIGHT** - 0.015
+**Combined Mean Exit Weight** - 0.015
 
-Our PrivCount stream measurements were conducted between 2018-01-04 and 2018-01-05. We measured the number of streams of various types observed from our relays over a 24 hour period. We focused on initial streams that provide hostnames and target destination ports, traditionally associated with web content (i.e., port 80 or 443). The rationale behind this is explained clearly in Section 4.2 of our paper. The resuts with 95% confidence interval is as follows:
+Our PrivCount stream measurements were conducted between 2018-01-04 and 2018-01-05. We measured the number of streams of various types observed from our relays over a 24 hour period. We focused on initial streams that provide hostnames and target destination ports, traditionally associated with web content (i.e., port 80 or 443). The rationale behind this is explained clearly in Section 4.2 of our paper. The resuts with 95% confidence interval are as follows:
 
 
 | Measurement Description | Results file |
@@ -60,18 +60,29 @@ Our PrivCount stream measurements were conducted between 2018-01-04 and 2018-01-
 
 ### Exit Domain Measurements
 
-We now provide the results from our measurements of the number of domains observed in initial streams that also provide a hostname and a web port. To ease presentation, we refer to them as primary domains or domains.
+We now provide the results from our measurements of the number of domains observed in initial streams that also provide a hostname and a web port. To ease presentation, we refer to them as _primary domains_ or simply _domains_.
 
-### Alexa Rank Measurements
+### Alexa Rank Measurement
 
-**COMBINED MEAN EXIT WEIGHT** - 0.022
+**Combined Mean Exit Weight** - 0.022
 
-The Alexa rank measurement was conducted between 2018-01-31 and 2018-02-01. We use the [Alexa top 1 millions sites list](https://www.alexa.com/topsites) to help us understand which sites are visited by Tor users. We sorted the sites by rank and split them into six sets of increasing size: set i = 0 contains the first 101 sites and set i > 0 contains the first 10<sup>i +1</sup> sites excluding those in set i − 1. We used a separate set for torproject.org since early measurements revealed a significant number of accesses to that domain. The resuts with 95% confidence interval is as follows:
+The Alexa rank measurement was conducted between 2018-01-31 and 2018-02-01. We use the [Alexa top 1 millions sites list](https://www.alexa.com/topsites) to help us understand which sites are visited by Tor users. We sorted the sites by rank and split them into six sets of increasing size: set i = 0 contains the first 101 sites and set i > 0 contains the first 10<sup>i +1</sup> sites excluding those in set i − 1. We used a separate set for torproject.org since early measurements revealed a significant number of accesses to that domain. The resuts with 95% confidence interval are as follows:
 
 | Measurement Description | Results file |
 |-------------|--------------|
-| Alexa top 1M sites | [exit-domain-alexa.txt](data/exit-domain-alexa.txt) |
-| Alexa rank measurement | [exit-domain-2018-01-31.csv](data/exit-domain-2018-01-31.csv) |
+| Alexa top 1M sites | [exit-domain-alexa1M.txt](data/exit-domain-alexa1M.txt) |
+| Alexa rank measurement | [exit-domain-alexarank-2018-01-31.csv](data/exit-domain-alexarank-2018-01-31.csv) |
+
+### Alexa Sibling Measurement
+
+**Combined Mean Exit Weight** - 0.021
+
+The Alexa siblings measurement was conducted between 2018-02-01 and 2018-02-02. In the Alexa siblings measurement, we created a set for each of the top 10 sites in the Alexa list. For each such site we stripped the top level domain to produce a site basename (e.g., google), and then added all entries from the top 1 million sites list that contained the basename into the corresponding set. We also used distinct sets for duckduckgo (rank 342, the default search engine in Tor Browser) and torproject (rank 10,244, developer of Tor Browser). The resuts with 95% confidence interval are as follows:
+
+| Measurement Description | Results file |
+|-------------|--------------|
+| Alexa top 10 variants | [exit-domain-alexaTop10Variants](data/exit-domain-alexaTop10Variants) |
+| Alexa siblings measurement | [exit-domain-alexasiblings-2018-02-01.csv](data/exit-domain-alexasiblings-2018-02-01.csv) |
 
 ## Client Measurements
 
