@@ -66,7 +66,7 @@ We now provide the results from our measurements of the number of domains observ
 
 **Combined Mean Exit Weight** - 0.022
 
-The Alexa rank measurement was conducted between 2018-01-31 and 2018-02-01. We use the [Alexa top 1 millions sites list](https://www.alexa.com/topsites) to help us understand which sites are visited by Tor users. We sorted the sites by rank and split them into six sets of increasing size: set i = 0 contains the first 101 sites and set i > 0 contains the first 10<sup>i +1</sup> sites excluding those in set i − 1. We used a separate set for torproject.org since early measurements revealed a significant number of accesses to that domain. The resuts with 95% confidence interval are as follows:
+The Alexa rank measurement was conducted between 2018-01-31 and 2018-02-01. We use the [Alexa top 1 million sites list](https://www.alexa.com/topsites) to help us understand which sites are visited by Tor users. We sorted the sites by rank and split them into six sets of increasing size: set i = 0 contains the first 101 sites and set i > 0 contains the first 10<sup>i +1</sup> sites excluding those in set i − 1. We used a separate set for torproject.org since early measurements revealed a significant number of accesses to that domain. The resuts with 95% confidence interval are as follows:
 
 | Measurement Description | Results file |
 |-------------|--------------|
@@ -77,12 +77,38 @@ The Alexa rank measurement was conducted between 2018-01-31 and 2018-02-01. We u
 
 **Combined Mean Exit Weight** - 0.021
 
-The Alexa siblings measurement was conducted between 2018-02-01 and 2018-02-02. In the Alexa siblings measurement, we created a set for each of the top 10 sites in the Alexa list. For each such site we stripped the top level domain to produce a site basename (e.g., google), and then added all entries from the top 1 million sites list that contained the basename into the corresponding set. We also used distinct sets for duckduckgo (rank 342, the default search engine in Tor Browser) and torproject (rank 10,244, developer of Tor Browser). The resuts with 95% confidence interval are as follows:
+The Alexa siblings measurement was conducted between 2018-02-01 and 2018-02-02. In the Alexa siblings measurement, we created a set for each of the top 10 sites in the [Alexa top 1 million sites list](https://www.alexa.com/topsites). For each such site we stripped the top level domain to produce a site basename (e.g., google), and then added all entries from the top 1 million sites list that contained the basename into the corresponding set. We also used distinct sets for duckduckgo (rank 342, the default search engine in Tor Browser) and torproject (rank 10,244, developer of Tor Browser). The resuts with 95% confidence interval are as follows:
 
 | Measurement Description | Results file |
 |-------------|--------------|
 | Alexa top 10 variants | [exit-domain-alexaTop10Variants](data/exit-domain-alexaTop10Variants) |
 | Alexa siblings measurement | [exit-domain-alexasiblings-2018-02-01.csv](data/exit-domain-alexasiblings-2018-02-01.csv) |
+
+### Top-Level Domain Measurements
+
+We measured the frequency with which all top-level domain (TLD) names that are contained in more than 104 entries in the [Alexa top 1 million sites list](https://www.alexa.com/topsites) also appeared in the observed primary domains. The measured TLDs include three main TLDs (.com, .org, and .net) as well as 11 country-specific TLDs.
+
+#### TLDs of Alexa domains
+
+**Combined Mean Exit Weight** - 0.023
+
+We measure the TLDs of only those primary domains that appear in the [Alexa top 1 million sites list](https://www.alexa.com/topsites) using wildcards between 2018-01-30 and 2018-01-31. We measured torproject.org using a separate counter. The resuts with 95% confidence interval are as follows:
+
+| Measurement Description | Results file |
+|-------------|--------------|
+| TLDs of Alexa domains | [exit-domain-alexa-tlds](data/exit-domain-alexa-tlds) |
+| TLDs of Alexa domains measurement | [exit-domain-alexadomainTLDs-2018-01-30.csv](data/exit-domain-alexadomainTLDs-2018-01-30.csv) |
+
+#### TLDs of primary domains
+
+**Combined Mean Exit Weight** - 0.024
+
+We measured the TLDs of all primary domains using wildcards between 2018-02-02 and 2018-02-03. The resuts with 95% confidence interval are as follows:
+
+| Measurement Description | Results file |
+|-------------|--------------|
+| TLDs | [exit-domain-tlds.txt](data/exit-domain-tlds.txt) |
+| TLDs of primary domains measurement | [exit-domain-primarydomainTLDs-2018-02-02.csv](data/exit-domain-primarydomainTLDs-2018-02-02.csv) |
 
 ## Client Measurements
 
