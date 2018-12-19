@@ -1,0 +1,7 @@
+youtube.com
+youtube.googleapis.com
+youtube.be
+youtube.de.com
+youtube.it
+youtube.om
+youtube.net
