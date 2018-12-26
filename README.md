@@ -6,8 +6,8 @@ This is the landing page for the following research publication:
 **Understanding Tor Usage with Privacy-Preserving Measurement**  
 _Proceedings of the 18th ACM Internet Measurement Conference (IMC 2018)_  
 by Akshaya Mani, T Wilson-Brown, [Rob Jansen](https://www.robgjansen.com), [Aaron Johnson](https://ohmygodel.com/), and [Micah Sherr](https://security.cs.georgetown.edu/~msherr/)  
-\[[Full paper available here](https://www.robgjansen.com/publications/torusage-imc2018.pdf)\]  
-\[[Appendix describing privacy action bounds available here](https://www.robgjansen.com/publications/torusage-imc2018-appendix.pdf)\]  
+\[[Full paper available here](paper.pdf)\]  
+\[[Appendix describing privacy action bounds available here](appendix.pdf)\]  
 \[[Tor Research Safety Board (TRSB) feedback available here](data/trsb-feedback.txt)\]
 
 If you reference this paper, or use any of its results or the data provided on this page, please cite the paper. Here is a bibtex entry for latex users:
