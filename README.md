@@ -81,7 +81,7 @@ The Alexa siblings measurement was conducted between 2018-02-01 and 2018-02-02. 
 
 | Measurement Description | Results file |
 |-------------|--------------|
-| Alexa top 10 variants | [exit-domain-alexaTop10Variants](data/exit-domain-alexaTop10Variants) |
+| Alexa siblings list | [domain-siblings-all.txt](data/exit-domain-alexa-siblings/domain-siblings-all.txt) |
 | Alexa siblings measurement | [exit-domain-alexasiblings-2018-02-01.csv](data/exit-domain-alexasiblings-2018-02-01.csv) |
 
 #### Top-Level Domain Measurements
@@ -96,8 +96,8 @@ We measure the TLDs of only those primary domains that appear in the [Alexa top 
 
 | Measurement Description | Results file |
 |-------------|--------------|
-| TLDs of Alexa domains | [exit-domain-alexa-tlds](data/exit-domain-alexa-tlds) |
-| TLDs of Alexa domains measurement | [exit-domain-alexadomainTLDs-2018-01-30.csv](data/exit-domain-alexadomainTLDs-2018-01-30.csv) |
+| Alexa TLDs list | [exit-domain-alexa-tlds](data/exit-domain-alexa-tlds/domain-alexa-tlds-all.tar.xz) |
+| Alexa TLDs measurement | [exit-domain-alexadomainTLDs-2018-01-30.csv](data/exit-domain-alexadomainTLDs-2018-01-30.csv) |
 
 ##### TLDs of primary domains
 
@@ -107,8 +107,8 @@ We measured the TLDs of all primary domains using wildcards between 2018-02-02 a
 
 | Measurement Description | Results file |
 |-------------|--------------|
-| TLDs | [exit-domain-tlds.txt](data/exit-domain-tlds.txt) |
-| TLDs of primary domains measurement | [exit-domain-primarydomainTLDs-2018-02-02.csv](data/exit-domain-primarydomainTLDs-2018-02-02.csv) |
+| Primary TLDs list | [exit-domain-tlds.txt](data/exit-domain-tlds.txt) |
+| Primary TLDs measurement | [exit-domain-primarydomainTLDs-2018-02-02.csv](data/exit-domain-primarydomainTLDs-2018-02-02.csv) |
 
 ## Client Measurements
 
