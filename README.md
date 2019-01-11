@@ -45,7 +45,7 @@ In addition to the auxiliary material linked above (the [Appendix](https://www.r
 
 ## Exit Measurements
 
-These results were measured from relays in a position to observe Tor's egress traffic. The mean combined exit weight of the measurement relays (taken over the consensuses that were active during the measurement) are specified under each measurement. The results can be extrapolated to the entire Tor network by dividing them by the combined exit fractional weight. 
+These results were measured from relays in a position to observe Tor's egress traffic. The mean combined exit weight of the measurement relays (taken over the consensuses that were active during the measurement) are specified under each measurement. Researchers who want to reproduce the paper's findings (i.e., the extrapolation to the entire Tor network) must divide all values by the combined mean exit weight.
 
 ### Exit Stream Measurements
 
