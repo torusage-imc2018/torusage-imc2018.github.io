@@ -96,7 +96,7 @@ We measure the TLDs of only those primary domains that appear in the [Alexa top 
 
 | Measurement Description | Results file |
 |-------------|--------------|
-| Alexa TLDs list | [exit-domain-alexa-tlds](data/exit-domain-alexa-tlds/domain-alexa-tlds-all.tar.xz) |
+| Alexa TLDs list | [domain-alexa-tlds-all.tar.xz](data/exit-domain-alexa-tlds/domain-alexa-tlds-all.tar.xz) |
 | Alexa TLDs measurement | [exit-domain-alexadomainTLDs-2018-01-30.csv](data/exit-domain-alexadomainTLDs-2018-01-30.csv) |
 
 ##### TLDs of primary domains
