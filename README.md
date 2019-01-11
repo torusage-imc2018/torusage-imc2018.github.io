@@ -51,12 +51,15 @@ These results were measured from relays in a position to observe Tor's egress tr
 
 _Combined Mean Exit Weight_ - 0.015
 
-Our PrivCount stream measurements were conducted between 2018-01-04 and 2018-01-05. We measured the number of streams of various types observed from our relays over a 24 hour period. We focused on initial streams that provide hostnames and target destination ports, traditionally associated with web content (i.e., port 80 or 443). The rationale behind this is explained clearly in Section 4.2 of our paper. The resuts with 95% confidence interval are as follows:
+Our PrivCount stream measurements were conducted between 2018-01-04 and 2018-01-05. We measured the number of streams of various types observed from our relays over a 24 hour period. We focused on initial streams that provide hostnames and target destination ports, traditionally associated with web content (i.e., port 80 or 443). The rationale behind this is explained clearly in Section 4.2 of our paper.
 
+The results with 95% confidence interval are as follows:
 
 | Measurement Description | Results file |
 |-------------|--------------|
 | Exit stream measurement | [exit-stream-2018-01-04.csv](data/exit-stream-2018-01-04.csv) |
+
+Figure 1 in the paper plots the raw values shown in the csv.
 
 ### Exit Domain Measurements
 
@@ -66,23 +69,37 @@ We now provide the results from our measurements of the number of domains observ
 
 _Combined Mean Exit Weight_ - 0.022
 
-The Alexa rank measurement was conducted between 2018-01-31 and 2018-02-01. We use the [Alexa top 1 million sites list](https://www.alexa.com/topsites) to help us understand which sites are visited by Tor users. We sorted the sites by rank and split them into six sets of increasing size: set i = 0 contains the first 101 sites and set i > 0 contains the first 10<sup>i +1</sup> sites excluding those in set i − 1. We used a separate set for torproject.org since early measurements revealed a significant number of accesses to that domain. The resuts with 95% confidence interval are as follows:
+The Alexa rank measurement was conducted between 2018-01-31 and 2018-02-01. We use the [Alexa top 1 million sites list](https://www.alexa.com/topsites) to help us understand which sites are visited by Tor users. We sorted the sites by rank and split them into six sets of increasing size: set i = 0 contains the first 101 sites and set i > 0 contains the first 10<sup>i +1</sup> sites excluding those in set i − 1. We used a separate set for torproject.org since early measurements revealed a significant number of accesses to that domain.
+
+The results with 95% confidence interval are as follows:
 
 | Measurement Description | Results file |
 |-------------|--------------|
 | Alexa top 1M sites | [exit-domain-alexa1M.txt](data/exit-domain-alexa1M.txt) |
 | Alexa rank measurement | [exit-domain-alexarank-2018-01-31.csv](data/exit-domain-alexarank-2018-01-31.csv) |
 
+To reproduce the percentages shown in Figure 2(top) in the paper, divide the value in each bin in the csv file in the table above by the total number of initial streams we measured during the same period. (No full network extrapolation is required since we are computing percentages.)
+
+The total number of streams during the Alexa rank measurement was `2215609`. Then. for example, the percentage for the `(0,10]` bin is:
+  * `185978 / 2215609 * 100 = 8.393990095 ~= 8.4`
+
 #### Alexa Sibling Measurement
 
 _Combined Mean Exit Weight_ - 0.021
 
-The Alexa siblings measurement was conducted between 2018-02-01 and 2018-02-02. In the Alexa siblings measurement, we created a set for each of the top 10 sites in the [Alexa top 1 million sites list](https://www.alexa.com/topsites). For each such site we stripped the top level domain to produce a site basename (e.g., google), and then added all entries from the top 1 million sites list that contained the basename into the corresponding set. We also used distinct sets for duckduckgo (rank 342, the default search engine in Tor Browser) and torproject (rank 10,244, developer of Tor Browser). The resuts with 95% confidence interval are as follows:
+The Alexa siblings measurement was conducted between 2018-02-01 and 2018-02-02. In the Alexa siblings measurement, we created a set for each of the top 10 sites in the [Alexa top 1 million sites list](https://www.alexa.com/topsites). For each such site we stripped the top level domain to produce a site basename (e.g., google), and then added all entries from the top 1 million sites list that contained the basename into the corresponding set. We also used distinct sets for duckduckgo (rank 342, the default search engine in Tor Browser) and torproject (rank 10,244, developer of Tor Browser).
+
+The results with 95% confidence interval are as follows:
 
 | Measurement Description | Results file |
 |-------------|--------------|
 | Alexa siblings list | [domain-siblings-all.txt](data/exit-domain-alexa-siblings/domain-siblings-all.txt) |
 | Alexa siblings measurement | [exit-domain-alexasiblings-2018-02-01.csv](data/exit-domain-alexasiblings-2018-02-01.csv) |
+
+To reproduce the percentages shown in Figure 2(bottom) in the paper, divide the value in each bin in the csv file in the table above by the total number of initial streams we measured during the same period. (No full network extrapolation is required since we are computing percentages.)
+
+The total number of streams during the Alexa sibling measurement was `2207358`. Then. for example, the percentage for the `google(1)` bin is:
+  * `51897 / 2207358 * 100 = 2.351091214 ~= 2.4`
 
 #### Top-Level Domain Measurements
 
@@ -92,23 +109,37 @@ We measured the frequency with which all top-level domain (TLD) names that are c
 
 _Combined Mean Exit Weight_ - 0.023
 
-We measure the TLDs of only those primary domains that appear in the [Alexa top 1 million sites list](https://www.alexa.com/topsites) using wildcards between 2018-01-30 and 2018-01-31. We measured torproject.org using a separate counter. The resuts with 95% confidence interval are as follows:
+We measure the TLDs of only those primary domains that appear in the [Alexa top 1 million sites list](https://www.alexa.com/topsites) using wildcards between 2018-01-30 and 2018-01-31. We measured torproject.org using a separate counter.
+
+The results with 95% confidence interval are as follows:
 
 | Measurement Description | Results file |
 |-------------|--------------|
 | Alexa TLDs list | [domain-alexa-tlds-all.tar.xz](data/exit-domain-alexa-tlds/domain-alexa-tlds-all.tar.xz) |
 | Alexa TLDs measurement | [exit-domain-alexadomainTLDs-2018-01-30.csv](data/exit-domain-alexadomainTLDs-2018-01-30.csv) |
 
+To reproduce the percentages shown in Figure 3(Alexa Top 1 Million Sites) in the paper, divide the value in each bin in the csv file in the table above by the total number of initial streams we measured during the same period. (No full network extrapolation is required since we are computing percentages.)
+
+The total number of streams during the Alexa Top 1M Sites measurement was `2235050`. Then. for example, the percentage for the `.com` bin is:
+  * `595450 / 2235050 * 100 = 26.64146216 ~= 26.6`
+
 ##### TLDs of primary domains
 
 _Combined Mean Exit Weight_ - 0.024
 
-We measured the TLDs of all primary domains using wildcards between 2018-02-02 and 2018-02-03. The resuts with 95% confidence interval are as follows:
+We measured the TLDs of all primary domains using wildcards between 2018-02-02 and 2018-02-03.
+
+The results with 95% confidence interval are as follows:
 
 | Measurement Description | Results file |
 |-------------|--------------|
 | Primary TLDs list | [exit-domain-tlds.txt](data/exit-domain-tlds.txt) |
 | Primary TLDs measurement | [exit-domain-primarydomainTLDs-2018-02-02.csv](data/exit-domain-primarydomainTLDs-2018-02-02.csv) |
+
+To reproduce the percentages shown in Figure 3(All Sites) in the paper, divide the value in each bin in the csv file in the table above by the total number of initial streams we measured during the same period. (No full network extrapolation is required since we are computing percentages.)
+
+The total number of streams during the All Sites measurement was `2196406`. Then. for example, the percentage for the `.com` bin is:
+  * `817645 / 2196406 * 100 = 37.226496376 ~= 37.2`
 
 ## Client Measurements
 

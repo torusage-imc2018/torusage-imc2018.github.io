@@ -1,4 +1,5 @@
 CounterName,BinValue+-NoiseValue,[BinValue-NoiseValue;BinValue+NoiseValue]
+total,2196406+-4942,[2191464;2201348]
 .com,817645+-4942,[812703;822587]
 .org,969075+-4942,[964133;974017]
 .net,109192+-4942,[104250;114134]

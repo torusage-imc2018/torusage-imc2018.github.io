@@ -1,4 +1,5 @@
 CounterName,BinValue+-NoiseValue,[BinValue-NoiseValue;BinValue+NoiseValue]
+total,2235050+-4942,[2230108;2239992]
 .com,595450+-4942,[590508;600392]
 .org,23592+-4942,[18650;28534]
 torproject.org,903109+-4942,[898167;908051]
